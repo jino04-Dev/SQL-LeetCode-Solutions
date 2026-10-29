@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+select max(salary) 
+ as SecondHighestSalary 
+ from Employee
+ where salary<  #compare value 
+  (select max(salary) from Employee); #first highest salary
+
+
+  #select second largest salary
+  #select table 
+  #compare value 
+  #first highest salary
