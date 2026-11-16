@@ -1,0 +1,15 @@
+SELECT v.customer_id, COUNT(*) AS count_no_trans
+-- Select columns and create an alias (temporary column name).
+
+FROM Visits v LEFT JOIN Transactions t
+-- Select tables and give them temporary names.
+-- LEFT JOIN keeps all records from the left table.
+
+ON v.visit_id = t.visit_id
+-- Joining condition (matches the common column).
+
+WHERE t.transaction_id IS NULL
+-- Condition: find visits without transactions.
+
+GROUP BY v.customer_id;
+-- Group records by customer_id and count each group.
